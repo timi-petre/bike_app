@@ -27,7 +27,8 @@ class VehicleUse extends StatelessWidget {
           leading: IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.of(context).popUntil((route) => route.isFirst);
+              Navigator.of(context).popUntil(
+                  (route) => route.isFirst); //Flutter Navigation pop to index 1
             },
           ),
         ),
@@ -104,9 +105,7 @@ class _VehicleState extends State<Vehicle> {
                 ListTile(
                   leading: Image.asset(
                     images[index],
-                    width: 70,
-                    height: 70,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                   ),
                   title: Text(
                     vehicles.titleTex,

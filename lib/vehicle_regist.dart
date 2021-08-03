@@ -51,7 +51,38 @@ class _RegisterVehState extends State<RegisterVeh> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: logo,
+      child: Column(
+        children: [
+          logo,
+          SizedBox(
+            height: 40,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            color: Colors.white,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'Phone No.',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepOrangeAccent,
+                    ),
+                  ),
+                ),
+                registNum,
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -61,4 +92,14 @@ Column logo = Column(
   children: [
     PersistentLogo(),
   ],
+);
+
+Padding registNum = Padding(
+  padding: const EdgeInsets.only(left: 20, right: 20),
+  child: TextField(
+    keyboardType: TextInputType.phone,
+    decoration: InputDecoration(
+      enabled: true,
+    ),
+  ),
 );

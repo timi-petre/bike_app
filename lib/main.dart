@@ -41,9 +41,11 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: screens[currentIndex],
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          child: screens[currentIndex],
+        ),
       ),
     );
   }
