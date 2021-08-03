@@ -1,6 +1,8 @@
 import 'package:bike_app/main.dart';
 import 'package:flutter/material.dart';
 
+import 'cover_type.dart';
+
 class VehicleRegister extends StatelessWidget {
   const VehicleRegister({Key? key}) : super(key: key);
 
@@ -55,7 +57,7 @@ class _RegisterVehState extends State<RegisterVeh> {
         children: [
           logo,
           SizedBox(
-            height: 40,
+            height: 35,
           ),
           Container(
             width: MediaQuery.of(context).size.width,
@@ -68,20 +70,95 @@ class _RegisterVehState extends State<RegisterVeh> {
                 Padding(
                   padding: const EdgeInsets.only(left: 20, top: 20),
                   child: Text(
-                    'Phone No.',
+                    'Enter Registration Number',
                     style: TextStyle(
                       fontFamily: 'Roboto',
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
                       color: Colors.deepOrangeAccent,
                     ),
                   ),
                 ),
                 registNum,
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _cancelButton(),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        _nextButton(),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _cancelButton() {
+    return Container(
+      child: ElevatedButton(
+        onPressed: () {
+          setState(() {
+            Navigator.pop(context);
+          });
+        },
+        child: IntrinsicWidth(
+          stepWidth: 100,
+          child: Center(
+            child: Text(
+              'Cancel',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          primary: Colors.grey,
+        ),
+      ),
+    );
+  }
+
+  Widget _nextButton() {
+    return Container(
+      child: ElevatedButton(
+        onPressed: () {
+          setState(() {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CoverType(),
+              ),
+            );
+          });
+        },
+        child: IntrinsicWidth(
+          stepWidth: 170,
+          child: Center(
+            child: Text(
+              'Next',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          primary: Colors.lightGreen,
+        ),
       ),
     );
   }
@@ -97,9 +174,14 @@ Column logo = Column(
 Padding registNum = Padding(
   padding: const EdgeInsets.only(left: 20, right: 20),
   child: TextField(
+    autofocus: true,
     keyboardType: TextInputType.phone,
     decoration: InputDecoration(
+      counterText: '',
+      isDense: true,
       enabled: true,
     ),
+    maxLength: 15,
+    maxLines: 1,
   ),
 );

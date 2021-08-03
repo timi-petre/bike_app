@@ -58,7 +58,7 @@ class PersistentLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        top: 20,
+        top: 15,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -69,13 +69,13 @@ class PersistentLogo extends StatelessWidget {
                 image: AssetImage('assets/images/test1.png'),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Text(
                 'Boda-boda Insurance',
                 style: GoogleFonts.inter(
                   fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
             ],
