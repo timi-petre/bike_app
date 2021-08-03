@@ -10,6 +10,7 @@ class InsuranceType extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.deepOrangeAccent,
           iconTheme: IconThemeData(color: Colors.white),
           title: const Text(
             'Home',

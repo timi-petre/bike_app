@@ -11,7 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    precacheImage(AssetImage("images/test1.png"), context);
+    precacheImage(AssetImage("assets/images/test1.png"), context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: appTitle,
@@ -64,7 +64,7 @@ class PersistentLogo extends StatelessWidget {
           Column(
             children: [
               Image(
-                image: AssetImage('images/test1.png'),
+                image: AssetImage('assets/images/test1.png'),
               ),
               SizedBox(
                 height: 10,

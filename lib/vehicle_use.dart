@@ -11,6 +11,7 @@ class VehicleUse extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Colors.deepOrangeAccent,
           iconTheme: IconThemeData(color: Colors.white),
           title: const Text(
             'Select a vehicle use',
@@ -35,27 +36,38 @@ class VehicleUse extends StatelessWidget {
   }
 }
 
-class Vehicle extends StatelessWidget {
+class Vehicle extends StatefulWidget {
+  const Vehicle({Key? key}) : super(key: key);
+
+  @override
+  _VehicleState createState() => _VehicleState();
+}
+
+class _VehicleState extends State<Vehicle> {
   final List<Vehicles> vehicleList = [
     Vehicles(
-      "da",
-      "subtitle",
+      "Private vehicle",
+      "Private vehicle for personal use only",
     ),
     Vehicles(
-      "da",
-      "subtitle",
+      "Boda-Boda",
+      "Motorcycle for carrying passengers",
     ),
     Vehicles(
-      "da",
-      "subtitle",
+      "Tuk-Tuk",
+      "Motorcycle for carrying passengers",
     ),
     Vehicles(
-      "da",
-      "subtitle",
+      "PSV Matatu or Bus",
+      "PVS Matatu and busses",
     ),
   ];
-
-  //const Vehicle({Key? key}) : super(key: key);
+  List images = [
+    "assets/images/car.png",
+    'assets/images/motorbike.png',
+    'assets/images/tuk-tuk.png',
+    'assets/images/bus.png'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -70,12 +82,33 @@ class Vehicle extends StatelessWidget {
   Widget buildVehicleCard(context, int index) {
     final vehicles = vehicleList[index];
     return Container(
-      child: Card(
-        child: Column(
-          children: [
-            Text(vehicles.titleTex),
-            Text(vehicles.subtitle),
-          ],
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Card(
+          child: InkWell(
+            splashColor: Colors.deepOrangeAccent.withAlpha(30),
+            onTap: () {
+              print('Card tapped.');
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ListTile(
+                  leading: Image.asset(
+                    images[index],
+                    width: 70,
+                    height: 70,
+                    fit: BoxFit.contain,
+                  ),
+                  title: Text(
+                    vehicles.titleTex,
+                    style: TextStyle(),
+                  ),
+                  subtitle: Text(vehicles.subtitle),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

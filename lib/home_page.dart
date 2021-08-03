@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
             icon: Container(
               child: Image(
                 image: AssetImage(
-                  'images/bar.png',
+                  'assets/images/bar.png',
                 ),
                 fit: BoxFit.cover,
               ),
@@ -174,7 +174,7 @@ class PhoneField extends StatelessWidget {
                       children: [
                         Container(
                           child: Image.asset(
-                            'images/kenya.png',
+                            'assets/images/kenya.png',
                             width: 35,
                           ),
                           decoration: BoxDecoration(
