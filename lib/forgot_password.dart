@@ -26,7 +26,7 @@ class ForgotPassword extends StatelessWidget {
           icon: Container(
             child: Image(
               image: AssetImage(
-                'images/bar.png',
+                'assets/images/bar.png',
               ),
               fit: BoxFit.cover,
             ),

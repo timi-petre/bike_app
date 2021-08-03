@@ -1,3 +1,4 @@
+import 'package:bike_app/vehicle_regist.dart';
 import 'package:flutter/material.dart';
 
 import 'config/Vehicle.dart';
@@ -88,7 +89,14 @@ class _VehicleState extends State<Vehicle> {
           child: InkWell(
             splashColor: Colors.deepOrangeAccent.withAlpha(30),
             onTap: () {
-              print('Card tapped.');
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VehicleRegister(),
+                  ),
+                );
+              });
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,9 +110,17 @@ class _VehicleState extends State<Vehicle> {
                   ),
                   title: Text(
                     vehicles.titleTex,
-                    style: TextStyle(),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
-                  subtitle: Text(vehicles.subtitle),
+                  subtitle: Text(
+                    vehicles.subtitle,
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ),
               ],
             ),
