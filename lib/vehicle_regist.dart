@@ -14,7 +14,7 @@ class VehicleRegister extends StatelessWidget {
           backgroundColor: Colors.deepOrangeAccent,
           iconTheme: IconThemeData(color: Colors.white),
           title: const Text(
-            'Home',
+            'Vehicle Registration',
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'Roboto',
@@ -140,7 +140,7 @@ class _RegisterVehState extends State<RegisterVeh> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CoverType(),
+                builder: (context) => CoverType(buttons: _nextButton),
               ),
             );
           });

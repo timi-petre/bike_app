@@ -34,18 +34,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int currentIndex = 0;
-  final screens = [
-    LoginPage(),
-    ForgotPassword(),
-  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          child: screens[currentIndex],
-        ),
+        body: LoginPage(),
       ),
     );
   }
