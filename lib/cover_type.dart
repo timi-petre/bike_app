@@ -87,11 +87,11 @@ class _CoverTypeSelectState extends State<CoverTypeSelect> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        cancelButton(),
+                        //cancelButton(),
                         SizedBox(
                           width: 10,
                         ),
-                        nextButton(),
+                        //nextButton(),
                       ],
                     ),
                   ),

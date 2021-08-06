@@ -140,7 +140,7 @@ class _RegisterVehState extends State<RegisterVeh> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => CoverType(buttons: _nextButton),
+                builder: (context) => CoverType(),
               ),
             );
           });
